@@ -38,7 +38,7 @@ if __name__ == "__main__":
     config.gpu_options.per_process_gpu_memory_fraction = 1.0
 
     # Create a session with the above options specified.
-    k.tensorflow_backend.set_session(tf.Session(config=config))
+    k.set_session(tf.Session(config=config))
 
     if not args.resume :
         xnet = FashionNet(512, 512, getKpNum(args.category))
