@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
 
     # TensorFlow wizardry
-    config = tf.ConfigProto()
+    config = tf.compat.v1.ConfigProto()
 
     # Don't pre-allocate memory; allocate as-needed
     config.gpu_options.allow_growth = True
