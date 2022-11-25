@@ -19,7 +19,7 @@ from keras.layers import (
 from tensorflow.keras.layers import BatchNormalization
 from keras.models import Model
 from keras import initializers
-from keras.engine import Layer, InputSpec
+from tensorflow.keras.layers import Layer, InputSpec
 from keras.engine.topology import get_source_inputs
 from keras import backend as K
 from keras.applications.imagenet_utils import _obtain_input_shape
