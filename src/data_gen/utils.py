@@ -31,7 +31,7 @@ def split_csv_train_val(allcsv, traincsv, valcsv, ratio=0.8):
     msk = np.random.rand(len(xdf)) < ratio
     trainDf= xdf[msk]
     valDf= xdf[~msk]
-    print "total", len(xdf), "split into train ", len(trainDf), '  val', len(valDf)
+    print ("total", len(xdf), "split into train ", len(trainDf), '  val', len(valDf))
 
     #save to file
     trainDf.to_csv(traincsv, index=False)
