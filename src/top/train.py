@@ -8,7 +8,7 @@ from fashion_net import FashionNet
 from dataset import getKpNum
 import tensorflow as tf
 # from keras import backend as k
-import tensorflow.keras.backend as K
+import tensorflow.keras.backend as k
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--gpuID", default=0, type=int, help='gpu id')
