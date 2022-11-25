@@ -26,9 +26,9 @@ class NormalizedErrorCallBack(keras.callbacks.Callback):
     def on_epoch_end(self, epoch, logs=None):
         modelName = os.path.join(self.foldPath, self.category+"_weights_"+str(epoch)+".hdf5")
         keras.models.save_model(self.model, modelName)
-        print "Saving model to ", modelName
+        print ("Saving model to ", modelName)
 
-        print "Runing evaluation ........."
+        print ("Runing evaluation .........")
 
         xEval = Evaluation(self.category, None)
         xEval.init_from_model(self.model)
@@ -36,11 +36,11 @@ class NormalizedErrorCallBack(keras.callbacks.Callback):
         start = time()
         neScore, categoryDict = xEval.eval(self.multiOut, details=True)
         end = time()
-        print "Evaluation Done", str(neScore), " cost ", end - start, " seconds!"
+        print ("Evaluation Done", str(neScore), " cost ", end - start, " seconds!")
 
         for key in categoryDict.keys():
             scores = categoryDict[key]
-            print key, ' score ', sum(scores)/len(scores)
+            print (key, ' score ', sum(scores)/len(scores))
 
         with open(self.valLog , 'a+') as xfile:
             xfile.write(modelName + ", Socre "+ str(neScore)+"\n")
