@@ -2,7 +2,7 @@ from keras.models import *
 from keras.layers import *
 from keras.optimizers import Adam, SGD
 from keras import backend as K
-from keras.applications.resnet50 import ResNet50
+from keras.applications.resnet import ResNet50
 
 IMAGE_ORDERING = 'channels_last'
 
